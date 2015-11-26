@@ -34,7 +34,7 @@ module Prct06
 	
 	def ==(other)
 		if other.is_a?Referencia		    
-		     @autores == other.autores && @titulo == other.titulo && @serie == other.serie && @editorial == other.editorial &&
+		     @autor == other.autor && @titulo == other.titulo && @serie == other.serie && @editorial == other.editorial &&
 		     @num_edi == other.num_edi && @fecha_publi == other.fecha_publi && @isbn == other.isbn
 		else
 		    false
