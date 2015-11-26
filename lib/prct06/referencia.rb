@@ -1,6 +1,7 @@
 module Prct06
 	
 	class Referencia
+		include Comparable
 		attr_accessor :autor, :titulo, :serie, :num_edi, :fecha_publi
 
 		def initialize (autor, titulo, serie, num_edi, fecha_publi)
