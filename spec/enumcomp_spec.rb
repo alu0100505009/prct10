@@ -24,7 +24,7 @@ describe Prct06::Referencia do
 												["ISBN-13: 978-1449325862", "ISBN-10: 1449325866"])
 
 		@l1 = Prct06::Bibliografia.new @b1
-		@l1 << @b2 << @b3 << @b4 << @b5
+		@l1 << @b2
 	end
   
   
@@ -36,47 +36,44 @@ describe Prct06::Referencia do
 		end
 		
 		it "metodo count" do
-			expec(@l1.count).to eq 5
+			expect(@l1.count).to eq 2
 		end
 		
 		it "metodo find" do
-			expect(@l1.find {|i| i==@b3}).to eq @b3
+			expect(@l1.find {|i| i==@b2}).to eq @b2
 		end
 		
 		it "#Funcion sort: Devuelve las salidas a la inversa segun la publicacion " do  #
-			p = @l1.sort{|b, a| a.publicacion <=> b.publicacion}
-			expect(p).to eq([@b5,@b4,@b3,@b2,@b1])
+			p = @l1.sort{|b, a| a <=> b}
+			expect(p).to eq([@b2,@b1])
 		end
 	end
 	
-      end
       
       
-      describe "Pruebas Referencia Comparable" do
-	it "Comprobar el metodo menor que" do
-  	  expect(@b1.autor < @b2.autor).to eq(true)
-  	 
-  	end
-  	
-  	it "comprobar el metodo mayor que" do
-  	  expect(@b1 > @b2).to eq(false)
-  	  
-  	end
-  	
-  	it "#La referencia 1 es igual que la referencia 2" do
-  	  expect(@b2 == @b2).to eq(true)
-  	end
-  	
-  	it "#La referencia 1 es menor igual que la referencia 2" do
-  	  expect(@b1<= @b2).to eq(true)
-  	end
-  	
-  	it "#La referencia 1 es mayor igual que la referencia 2" do
-  	  expect(@b1 >= @b2).to eq(false)
-  	end	
+    describe "Pruebas Referencia Comparable" do
+		it "Comprobar el metodo menor que" do
+	  	  expect(@b1 < @b2).to eq(true)
+	  	 
+	  	end
+	  	
+	  	it "comprobar el metodo mayor que" do
+	  	  expect(@b1 > @b2).to eq(false)
+	  	  
+	  	end
+	  	
+	  	it "#La referencia 1 es igual que la referencia 2" do
+	  	  expect(@b2 == @b2).to eq(true)
+	  	end
+	  	
+	  	it "#La referencia 1 es menor igual que la referencia 2" do
+	  	  expect(@b1<= @b2).to eq(true)
+	  	end
+	  	
+	  	it "#La referencia 1 es mayor igual que la referencia 2" do
+	  	  expect(@b1 >= @b2).to eq(false)
+	  	end	
 	
-      end
-	
-  
-  
-end  
+    end
+
+end
