@@ -42,7 +42,7 @@ module Prct06
 		
 		def <=>(other)
 			return nil unless other.is_a?Referencia   #retorna nil si se cumple que no se cumpla el is_a? y salimos
-			@autores  <=> other.autores		
+			@autor  <=> other.autor		
 		end
 		
 		
