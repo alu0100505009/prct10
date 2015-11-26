@@ -53,7 +53,27 @@ describe Prct06::Referencia do
       
       
       describe "Pruebas Referencia Comparable" do
-	
+	it "Comprobar el metodo menor que" do
+  	  expect(@b1.autor < @b2.autor).to eq(true)
+  	 
+  	end
+  	
+  	it "comprobar el metodo mayor que" do
+  	  expect(@b1 > @b2).to eq(false)
+  	  
+  	end
+  	
+  	it "#La referencia 1 es igual que la referencia 2" do
+  	  expect(@b2 == @b2).to eq(true)
+  	end
+  	
+  	it "#La referencia 1 es menor igual que la referencia 2" do
+  	  expect(@b1<= @b2).to eq(true)
+  	end
+  	
+  	it "#La referencia 1 es mayor igual que la referencia 2" do
+  	  expect(@b1 >= @b2).to eq(false)
+  	end	
 	
       end
 	
