@@ -31,6 +31,10 @@ module Prct06
     			salida += self.isbns
     			return salida
         end
+	
+	def <=> (other)
+	    
+	end
     
     end
 end

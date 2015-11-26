@@ -11,6 +11,9 @@ module Prct06
 			if referencias.is_a? Referencia
 				@head = Nodo.new(referencias, nil, nil)
 				@tail = nil
+			elsif referencias.nil?
+				@head = nil
+				@tail = nil
 			else raise "Debe crearse una clase Referencia y pasarla como parámetro al constructor de esta clase" end
 		end
 		

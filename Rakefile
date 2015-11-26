@@ -23,4 +23,5 @@ task :spec do
   sh "rspec -I. spec/bibliografia_spec.rb"
   sh "rspec -I. spec/lista_spec.rb"	
   sh "rspec -I. spec/herencia_spec.rb"	
+  sh "rspec -I. spec/enumcomp_spec.rb"	
 end
