@@ -21,6 +21,15 @@ module Prct06
     			"#{num_edi} (#{fecha_publi})\n"
     			return salida
         end
+	
+	def ==(other)
+		if other.is_a?Referencia		    
+		     @autores == other.autores && @titulo == other.titulo && @serie == other.serie && @volumen == other.volumen &&
+		     @num_edi == other.num_edi && @fecha_publi == other.fecha_publi && @fasciculo == other.fasciculo && @articulo == other.articulo
+		else
+		    false
+		end
+	end	
     
     end
 
