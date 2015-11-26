@@ -1,6 +1,8 @@
 module Prct06
 
-		class Bibliografia
+	class Bibliografia
+		include Enumerable
+		
 		attr_reader  :head, :tail
 		
 		Nodo = Struct.new :value, :next, :prev
@@ -10,6 +12,15 @@ module Prct06
 				@head = Nodo.new(referencias, nil, nil)
 				@tail = nil
 			else raise "Debe crearse una clase Referencia y pasarla como parámetro al constructor de esta clase" end
+		end
+		
+		def each
+			return nil if @head.nil?
+			node = @head
+			until node.nil?
+				yield node.value
+				node = node.next
+			end
 		end
 
 		def << (value)
