@@ -43,7 +43,7 @@ describe Prct06::Referencia do
 			expect(@l1.find {|i| i==@b2}).to eq @b2
 		end
 		
-		it "#Funcion sort: Devuelve las salidas a la inversa segun la publicacion " do  #
+		it "sort: Devuelve las salidas a la inversa segun la publicacion " do  #
 			p = @l1.sort{|b, a| a <=> b}
 			expect(p).to eq([@b2,@b1])
 		end
